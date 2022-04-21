@@ -3,7 +3,7 @@ package day038;
 import java.util.Arrays;
 
 public class MainApp {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws CloneNotSupportedException {
 
         int[] sayilar={3,5,1,2,9,4};
 
@@ -41,12 +41,18 @@ public class MainApp {
         }
 
         // TASK
-
         Ikili[] ikililer={
                 new Ikili(9,10),new Ikili(3,4),new Ikili(7,8),new Ikili(5,6),new Ikili(1,2)
         };
 
+        System.out.println(Arrays.toString(ikililer));
         Arrays.sort(ikililer);
         System.out.println(Arrays.toString(ikililer));
+
+        Ikili ikili= (Ikili) ikililer[0].clone();
+        ikili.setX(6);
+        System.out.println(ikili);   // (1,2) nesnesini klonladık (6,2) şeklinde ama dizideki orjinal nesne değişmedi.
+        System.out.println(Arrays.toString(ikililer));  // Diziyi sıraladıkmı 0.indeks hala (1,2). (6,2) olmadı. Orjinal nesne duruyor hala.
+
     }
 }

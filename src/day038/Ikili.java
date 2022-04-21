@@ -1,6 +1,6 @@
 package day038;
 
-public class Ikili implements Comparable {   // TASK
+public class Ikili implements Comparable,Cloneable {   // TASK
 
     private int x;
     private int y;
@@ -37,6 +37,12 @@ public class Ikili implements Comparable {   // TASK
         Ikili i=(Ikili) o;
         return (this.getX()+this.getY())/(double)2 < ( (i.getX())+(i.getY()) )/(double)2 ? -1 : (this.getX()+this.getY())/(double)2 ==
                 ( (i.getX() + i.getY()) ) / (double)2 ? 0 : 1;
+    }
+
+    @Override // Task dışı. Klonlama
+    protected Object clone() throws CloneNotSupportedException {
+        Ikili i = new Ikili(x,y);
+        return i;
     }
 
     /*
