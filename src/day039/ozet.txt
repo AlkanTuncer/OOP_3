@@ -1,0 +1,25 @@
+            - Erişim Belirteçleri -
+
+private   : Sadece ilgili sınıfın içinden erişime izin var.
+public    : Dünyada tasarlanmış herhangi bir sınıfın içinden erişime izin var.
+protected : Kendi package'ının içinden ve sınıfın alt sınıfları içerisinden erişime izin var.
+          : Kendi package'ının içinden erişime izin var.
+
+
+Kalıtım :
+            class A { } --> 'extends Object'
+            class B extends A { }
+
+Encapsulation / Sarmalama :
+            class A {
+                private int x;
+                public int getX() { return x; }                            - Hafızadan Okuma / Getter
+                public void setX(int x) { if(0<x && x<=100) this.x=x; }    - Hafızaya Yazma  / Setter
+                    }
+
+Polymorphism / Çok Biçimlilik :
+    1.Overload :
+        Toplama İşlemi -->  public int topla (int x, int y) { return x+y; }
+                            public double topla(double x,double y) { return x+y; }
+
+    2.Override : Ata sınıfında tanımlanmış bir metodun geçersiz kılınarak yeniden yazılmasıdır.
